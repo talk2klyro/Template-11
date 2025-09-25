@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>BrightPath Consulting — Premium Small Business Solutions</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --primary: #ff6b3c;
+    --secondary: #ffb46b;
+    --bg: #f8f9fa;
+    --text: #1f2937;
+    --muted: #6b7280;
+    --radius: 16px;
+    --max-width: 1300px;
+  }
+
+  * { box-sizing: border-box; margin:0; padding:0; }
+  body { font-family: 'Poppins', sans-serif; background: var(--bg); color: var(--text); line-height:1.6; overflow-x: hidden; }
+  a { text-decoration: none; color: inherit; }
+
+  .container { max-width: var(--max-width); margin: auto; padding: 20px; }
+
+  header { display:flex; justify-content: space-between; align-items: center; padding: 25px 0; position: sticky; top:0; background: #fff; z-index:1000; box-shadow: 0 2px 12px rgba(0,0,0,0.05); }
+  .logo { font-size: 28px; font-weight: 700; color: var(--primary); }
+  nav a { margin-left: 25px; font-weight: 500; color: var(--text); transition: color 0.3s; }
+  nav a:hover { color: var(--primary); }
+
+  .hero { display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center; padding: 80px 0; }
+  .hero h1 { font-size: 3rem; margin-bottom: 20px; color: var(--primary); animation: fadeInUp 1s ease forwards; opacity:0; }
+  .hero p { color: var(--muted); margin-bottom: 30px; font-size: 1.1rem; animation: fadeInUp 1.2s ease forwards; opacity:0; }
+  .hero-buttons { display:flex; gap:20px; animation: fadeInUp 1.4s ease forwards; opacity:0; }
+  .btn { padding: 14px 28px; border-radius: var(--radius); font-weight: 600; cursor:pointer; display:inline-block; transition: all 0.3s ease; box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+  .btn-primary { background: var(--primary); color: #fff; }
+  .btn-primary:hover { background: var(--secondary); transform: translateY(-3px) scale(1.03); }
+  .btn-outline { border: 2px solid var(--primary); color: var(--primary); }
+  .btn-outline:hover { background: var(--primary); color: #fff; transform: translateY(-3px) scale(1.03); }
+
+  @keyframes fadeInUp {
+    0% { opacity:0; transform: translateY(20px); }
+    100% { opacity:1; transform: translateY(0); }
+  }
+
+  section { padding: 60px 0; }
+  h2 { font-size: 2.5rem; margin-bottom: 40px; color: var(--primary); text-align: center; position: relative; }
+  h2::after { content: ''; display:block; width:60px; height:4px; background: var(--primary); margin:10px auto 0; border-radius: 2px; }
+
+  .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+  .feature-card { background: #fff; padding: 30px; border-radius: var(--radius); box-shadow: 0 8px 25px rgba(0,0,0,0.07); text-align: center; transition: all 0.3s ease; }
+  .feature-card:hover { transform: translateY(-8px) scale(1.02); box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+  .feature-card h3 { color: var(--primary); margin-bottom: 12px; }
+
+  .products { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 30px; }
+  .product-card { border-radius: var(--radius); overflow: hidden; box-shadow: 0 6px 25px rgba(0,0,0,0.08); background: #fff; transition: all 0.3s ease; }
+  .product-card:hover { transform: translateY(-5px) scale(1.02); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+  .product-card img { width:100%; }
+  .product-card .content { padding: 20px; }
+  .product-card .content h4 { margin-bottom: 10px; color: var(--primary); }
+  .product-card .content p { font-size: 14px; color: var(--muted); margin-bottom: 15px; }
+
+  .testimonials { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 25px; }
+  .testimonial-card { background: #fff; padding: 25px; border-radius: var(--radius); box-shadow: 0 6px 25px rgba(0,0,0,0.08); font-style: italic; transition: all 0.3s ease; }
+  .testimonial-card:hover { transform: translateY(-5px); box-shadow: 0 12px 35px rgba(0,0,0,0.12); }
+
+  .contact-form { max-width: 500px; margin: auto; }
+  .contact-form label { display:block; margin-bottom:6px; font-weight:500; }
+  .contact-form input, .contact-form textarea { width:100%; padding:12px; border:1px solid #d1d5db; border-radius: var(--radius); margin-bottom:18px; transition: all 0.3s ease; }
+  .contact-form input:focus, .contact-form textarea:focus { border-color: var(--primary); box-shadow: 0 0 8px rgba(255,107,60,0.3); outline:none; }
+  .contact-form button { width:100%; }
+
+  footer { text-align: center; padding: 35px 0; color: var(--muted); font-size: 14px; border-top:1px solid #e5e7eb; }
+
+  @media(max-width: 768px){ .hero { grid-template-columns: 1fr; text-align:center; } .hero-buttons { justify-content: center; } }
+</style>
+</head>
+<body>
+
+<div class="container">
+
+  <!-- Header -->
+  <header>
+    <div class="logo">BrightPath</div>
+    <nav>
+      <a href="#features">Services</a>
+      <a href="#products">Products</a>
+      <a href="#testimonials">Reviews</a>
+      <a href="#contact" class="btn btn-primary">Contact</a>
+    </nav>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div>
+      <h1>Elevate Your Small Business</h1>
+      <p>Premium solutions to grow your brand, streamline operations, and attract more clients.</p>
+      <div class="hero-buttons">
+        <a href="#contact" class="btn btn-primary">Get Started</a>
+        <a href="#products" class="btn btn-outline">Explore Products</a>
+      </div>
+    </div>
+    <div>
+      <img src="https://via.placeholder.com/550x400" alt="Business Growth Illustration">
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section id="features">
+    <h2>Our Premium Services</h2>
+    <div class="features">
+      <div class="feature-card">
+        <h3>Advanced Marketing</h3>
+        <p>Custom campaigns that maximize reach and engagement.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Web & App Design</h3>
+        <p>Modern digital solutions for small business growth.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Strategic Consulting</h3>
+        <p>Expert insights to optimize operations and revenue.</p>
+      </div>
+      <div class="feature-card">
+        <h3>Brand Identity</h3>
+        <p>Professional brand design to stand out in your market.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section id="products">
+    <h2>Featured Products</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Product 1">
+        <div class="content">
+          <h4>Business Toolkit</h4>
+          <p>Essential tools for marketing and operations success.</p>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Product 2">
+        <div class="content">
+          <h4>Social Media Kit</h4>
+          <p>Templates and strategies for consistent engagement.</p>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+      <div class="product-card">
+        <img src="https://via.placeholder.com/300x200" alt="Product 3">
+        <div class="content">
+          <h4>Branding Package</h4>
+          <p>Logo, color palette, and identity guidelines included.</p>
+          <a href="#" class="btn btn-primary">Buy Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section id="testimonials">
+    <h2>Client Testimonials</h2>
+    <div class="testimonials">
+      <div class="testimonial-card">"BrightPath transformed our business into a professional brand!" — Lina M.</div>
+      <div class="testimonial-card">"We doubled our revenue thanks to their marketing strategies." — Ahmed R.</div>
+      <div class="testimonial-card">"The design and consulting services are top-notch!" — Sarah T.</div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section id="contact">
+    <h2>Contact Us</h2>
+    <form class="contact-form" onsubmit="sendEmail(event)">
+      <label for="name">Name</label>
+      <input id="name" name="name" type="text" required>
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" required>
+      <label for="message">Message</label>
+      <textarea id="message" name="message" required></textarea>
+      <button type="submit" class="btn btn-primary">Send Message</button>
+    </form>
+  </section>
+
+  <!-- Footer -->
+  <footer>
+    © <span id="year"></span> BrightPath Consulting — All Rights Reserved
+  </footer>
+
+</div>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+  function sendEmail(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const email = document.getElementById('email').value;
+    const message = document.getElementById('message').value;
+    const subject = encodeURIComponent('Message from ' + name);
+    const body = encodeURIComponent(message + '\n\nFrom: ' + name + ' (' + email + ')');
+    window.location.href = `mailto:info@brightpath.com?subject=${subject}&body=${body}`;
+  }
+</script>
+
+</body>
+</html>
